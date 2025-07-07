@@ -80,7 +80,7 @@ show_team_stats(team1, stats)
 show_team_stats(team2, stats)
 st.markdown("---")
 
-        if team1 != team2 and st.button("🔮 Prédire le match"):
+if team1 != team2 and st.button("🔮 Prédire le match"):
             score, winner = predict_score(team1, team2, stats)
             if score:
     st.markdown("---")
