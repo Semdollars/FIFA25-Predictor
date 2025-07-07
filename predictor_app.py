@@ -104,14 +104,16 @@ if team1 != team2 and st.button("⚽ Prédire le match"):
     {team1.title()} {score[0]} - {score[1]} {team2.title()}
     Gagnant probable : {winner}
     """
-
-    st.download_button(
-        label="📥 Télécharger la prédiction (.txt)",
-        data=resume,
-        file_name=f"prediction_{team1}_{team2}.txt",
-        mime="text/plain"
-        else:
-            st.warning("Pas assez de données pour prédire ce match.")
+        st.download_button(
+            label="📥 Télécharger la prédiction (.txt)",
+            data=resume,
+            file_name=f"prediction_{team1}_{team2}.txt",
+            mime="text/plain"
+        )
     else:
+        st.warning("Pas assez de données pour prédire ce match.")
+else:
+    st.error("Aucun score détecté dans le texte.")
+
         st.error("Aucun score détecté dans le texte.")
 
