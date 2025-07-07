@@ -74,8 +74,7 @@ def show_team_stats(team, stats):
 - ⚽ **Buts marqués (moyenne)** : {round(statistics.mean(scored), 2)}
 - 🛡️ **Buts encaissés (moyenne)** : {round(statistics.mean(conceded), 2)}
 - 📊 **Matchs analysés** : {len(scored)}
-""")
-
+    """)
 if uploaded_file is not None:
     raw_text = uploaded_file.read().decode("utf-8")
     matches = parse_scores_from_text(raw_text)
