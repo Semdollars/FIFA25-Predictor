@@ -85,25 +85,22 @@ if team1 != team2 and st.button("⚽ Prédire le match"):
 
     if score:
         st.markdown("---")
-
         with st.container():
             st.markdown(f"""
-            <div style='background-color:#f0f2f6;padding:20px;border-radius:10px;'>
-                <h3 style='color:#2c3e50;text-align:center;'>
-                    {team1.title()} <span style='color:#72ae60'>{score[0]}</span> -
-                    <span style='color:#e74c3c'>{score[1]}</span> {team2.title()}
-                </h3>
-                <h4 style='text-align:center;color:#2980b9;'>🏆 Gagnant probable : {winner}</h4>
-            </div>
+                <div style='background-color:#f0f2f6;padding:20px;border-radius:10px;'>
+                    <h3 style='color:#2c3e50;text-align:center;'>
+                        {team1.title()} <span style='color:#27ae60'>{score[0]}</span> -
+                        <span style='color:#e74c3c'>{score[1]}</span> {team2.title()}
+                    </h3>
+                    <h4 style='text-align:center;color:#2980b9;'>🏆 Gagnant probable : {winner}</h4>
+                </div>
             """, unsafe_allow_html=True)
 
-
-    # Génération du contenu texte à télécharger
-    resume = f"""
-    📝 Prédiction de match :
-    {team1.title()} {score[0]} - {score[1]} {team2.title()}
-    Gagnant probable : {winner}
-    """
+        # Génération du contenu texte à télécharger
+        resume = f"""📋 Prédiction de match :
+{team1.title()} {score[0]} - {score[1]} {team2.title()}
+Gagnant probable : {winner}
+"""
         st.download_button(
             label="📥 Télécharger la prédiction (.txt)",
             data=resume,
@@ -114,6 +111,3 @@ if team1 != team2 and st.button("⚽ Prédire le match"):
         st.warning("Pas assez de données pour prédire ce match.")
 else:
     st.error("Aucun score détecté dans le texte.")
-
-        st.error("Aucun score détecté dans le texte.")
-
