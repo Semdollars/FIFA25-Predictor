@@ -110,9 +110,8 @@ if team1 != team2 and st.button("⚽ Prédire le match"):
         data=resume,
         file_name=f"prediction_{team1}_{team2}.txt",
         mime="text/plain"
-    )
-
-            else:
-                st.warning("Pas assez de données pour prédire ce match.")
+        else:
+            st.warning("Pas assez de données pour prédire ce match.")
     else:
         st.error("Aucun score détecté dans le texte.")
+
