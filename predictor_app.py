@@ -63,6 +63,18 @@ def predict_score(team1, team2, stats):
 
 # Interface
 uploaded_file = st.file_uploader("📄 Téléverse ton fichier de scores (format texte)", type="txt")
+import statistics
+
+# Fonction pour afficher les statistiques moyennes d'une équipe
+def show_team_stats(team, stats):
+    st.subheader(f"📊 Statistiques pour {team.title()}")
+    scored = stats[team]['scored']
+    conceded = stats[team]['conceded']
+    st.markdown(f"""
+- ⚽ **Buts marqués (moyenne)** : {round(statistics.mean(scored), 2)}
+- 🛡️ **Buts encaissés (moyenne)** : {round(statistics.mean(conceded), 2)}
+- 📊 **Matchs analysés** : {len(scored)}
+""")
 
 if uploaded_file is not None:
     raw_text = uploaded_file.read().decode("utf-8")
